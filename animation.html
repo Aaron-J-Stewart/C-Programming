@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		function change(){
+			for(var i=2; i<=6; i=i+1) {
+				window.setTimeout(document.getElementById('theGoblinImage').src='http://www.psychicsoftware.com/goblin_run_'+i+'.png', 200);
+			}
+		}
+	</script>
+</head>
+<body onload=change()>
+<div style='position:absolute; left:200px; top:200px;' id='theGoblin'>
+<img id='theGoblinImage' src='http://www.psychicsoftware.com/goblin_run_1.png'>
+</div>
+</body>
+</html>

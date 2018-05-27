@@ -1,0 +1,17 @@
+<html>
+<head>
+	<script>
+		function integers(){
+			var ints = [];
+			for(i=0; i<101; i++){
+				ints[i] = Math.ceil(Math.random()*999);
+			}
+			ints.sort();
+			document.getElementById("cunt").innerHTML = ints;
+		}
+	</script>
+</head>
+<body onload="integers()">
+	<p id="cunt"></p>
+</body>
+</html>

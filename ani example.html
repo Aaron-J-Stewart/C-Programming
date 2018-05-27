@@ -1,0 +1,31 @@
+<html> Two separate animations
+<head>
+<script>
+var leftPos=400;
+var speed=-4;
+var bugImg = "bug2_1.jpg";
+function move() {
+leftPos += speed;
+if (leftPos<=5 && speed<0)
+speed=4;
+else if (leftPos>=595 && speed>0)
+speed=-4;
+document.getElementById("divBug").style.left = leftPos + "px";
+window.setTimeout(move, 20);
+}
+function flapWings() {
+if (bugImg=="bug2_1.jpg")
+bugImg="bug2_2.jpg";
+else
+bugImg="bug2_1.jpg";
+document.getElementById("imgBug").src = bugImg;
+window.setTimeout(flapWings, 1000);
+}
+</script>
+</head>
+<body style="background-color:black;" onload="move(); flapWings();">
+<div id='divBug' style='position:absolute; left:400px; top:100px'>
+<img id='imgBug' src='bug2_1.jpg'>
+</div>
+</body>
+</html>

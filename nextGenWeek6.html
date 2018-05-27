@@ -1,0 +1,59 @@
+<html>
+<head>
+<script>
+ function output() {
+	var i = 0;
+	var sum = 0;
+    var avg = 0;
+	var arrA = new Array(100);
+	
+	//create array with random numbers
+	for(i=0; i<101; i++)
+    {
+        arrA[i] = Math.ceil(Math.random()*999);
+    }
+	
+	
+	//Calc sum
+	 for(i=0; i<101; i++)
+    {
+        sum += arrA[i];
+    }
+	
+	//Calc avg
+	for(i=0; i!=101; i++)
+    {
+        avg += arrA[i];
+    }
+    avg = avg/100;
+	
+	
+	//find largest number
+	var lrg = Math.max.apply(Math, arrA);
+	
+	//find smallest number
+	var sml = Math.min.apply(Math, arrA);
+	
+	//create paragraph
+	var maths = "Sum: "+sum+"<br>Average: "+avg+"<br>Largest Number: "+lrg+"<br>Smallest Number: "+sml+"";
+    document.getElementById("maths").innerHTML = maths;
+	
+	
+	//list all numbers
+	 for(i=0; i<101; i++)
+    {
+        var numbersOutput = arrA[i];
+		if (i<100){
+        document.getElementById("numbers").innerHTML += ""+numbersOutput+", ";}
+		else {document.getElementById("numbers").innerHTML += ""+numbersOutput+" ";}
+    }
+	
+	
+ }
+</script>
+</head>
+<body onload="output()">
+<p id='maths'></p>
+<p id='numbers'></p>
+</body>
+</html>

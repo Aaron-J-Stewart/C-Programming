@@ -1,0 +1,28 @@
+<html>
+<head>
+	<script>
+		function counter(){
+			var text = document.getElementById("myTextArea").value;	
+			var characterCount = text.length;
+			var vowelCount = 0;
+			for (var i = 0; i < characterCount; i++){
+				var currentLetter = text.substr(i, 1);
+				if (currentLetter == "a"||currentLetter == "A"||currentLetter == "e"
+				||currentLetter == "E"||currentLetter == "i"||currentLetter == "I"
+				||currentLetter == "o"||currentLetter == "O"||currentLetter == "u"
+				||currentLetter == "U")
+					vowelCount += 1;
+			}
+			var output="Number of vowels: " + vowelCount;
+			document.getElementById("divOutput").innerHTML = output;
+		}
+	</script>
+</head>
+<body>
+	<textarea id="myTextArea" onkeyup = "counter()">
+	</textarea>
+	<br>
+	<div id='divOutput'>Number of vowels:</div>
+	
+</body>
+</html>

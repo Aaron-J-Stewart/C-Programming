@@ -1,0 +1,50 @@
+<!DOCTYPE.html>
+<html>
+<head>
+<title>Week 3</title>
+<script>
+
+function counter()
+
+{
+	
+	var text = document.getElementById("myTextCounter").value;
+	var characterCount = text.length;
+	var wordCount = 0;
+	//var currentCharacter;
+	//var output1 = "1. ";
+	//var output2 = "2. ";
+	
+	for (var i = 0; i < characterCount; i++) 
+	
+	{
+	
+		var currentLetter = text.substr(i, 1);
+
+		if (currentLetter == " ")
+	
+		{ 
+	
+			wordCount += 1;
+	
+		}
+		
+	}
+	
+	//output1 += "Number of Characters : " + characterCount + ".<br>";
+	//document.getElementById("divOutput1").innerHTML = output1;
+	output2 += "Number of Words : " + wordCount + ".<br>";
+	document.getElementById("divOutput2").innerHTML = output2;
+	
+}
+
+</script>
+</head>
+<body>
+<p>Your Text Counter</p>
+<textarea id="myTextCounter" value="Default Text goes here." onkeyup = "counter();">
+</textarea>
+<br>
+<div id='divOutput2'>number of words</div>
+</body>
+</html>

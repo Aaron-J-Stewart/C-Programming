@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		var leftPos=200;
+		var topPos=200;
+		var horizontalSpeed=1;
+		var verticalSpeed=1;
+		function move() {
+			leftPos += horizontalSpeed;
+			topPos += verticalSpeed;
+			if (leftPos<1 && horizontalSpeed<0)
+				horizontalSpeed=1;
+			else if (leftPos>560 && horizontalSpeed>0)
+				horizontalSpeed=-1;
+			if (topPos<1 && verticalSpeed<0)
+				verticalSpeed=1;
+			else if (topPos>560 && verticalSpeed>0)
+				verticalSpeed=-1;
+			document.getElementById("theBall").style.left = leftPos + "px";
+			document.getElementById("theBall").style.top = topPos + "px";
+			window.setTimeout(move, 20);
+		}
+	</script>
+</head>
+<body onload="move()">
+	<div style='position:absolute; left:0px; top:0px;
+	width:600px; height:600px; background:#00FF00'>
+		<div style='position:absolute; left:200px;
+		top:200px;' id='theBall'>
+			<img src='http://www.psychicsoftware.com/ball.png'>
+		</div>
+	</div>
+</body>
+</html>

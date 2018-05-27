@@ -1,0 +1,34 @@
+<html>
+<head>
+	<script>
+		function counter(){
+			var text = document.getElementById("myTextBox").value;	
+			var characterCount = text.length;
+			var upperCount = 0;
+			for (var i=0; i < characterCount; i++) {
+				var currentChar = text.substr(i, 1);
+				if (currentChar === currentChar.toUpperCase() && currentChar != " ")
+					upperCount +=1;				
+			}
+			var arr = text.split(" ");
+			var words = arr.length;
+			var first = arr[0];
+			document.getElementById("chars").innerHTML = "Number of characters: " + characterCount;
+			document.getElementById("divOutput").innerHTML = "Number of upper case letters: " + upperCount;
+			document.getElementById("fname").innerHTML = "First name: " + first;
+			document.getElementById("words").innerHTML = "Number of words: " + words;
+			
+		}
+	</script>
+</head>
+<body>
+	<label for="myTextBox">Please enter your name: </label>
+	<input type="text" id="myTextBox">
+	<button onclick="counter()">Go</button>
+	<br>
+	<div id='chars'></div>
+	<div id='divOutput'></div>
+	<div id='fname'></div>
+	<div id='words'></div>
+</body>
+</html>
